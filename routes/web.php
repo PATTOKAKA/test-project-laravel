@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// http://localhost:88/laravel_training/test-project/public/hello/test
+Route::get('hello/{msg?}', function($msg = 'no message') {
+    $html = <<< EOF
+    <html><body><h1>Hello テスト{$msg}</h1></body></html>
+    EOF;
+
+    return $html;
+});
